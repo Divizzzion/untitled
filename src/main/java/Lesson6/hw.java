@@ -9,13 +9,12 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class hw {
-    public static WebDriver driver = new ChromeDriver();
-    private static String[] args;
+    public static WebDriver driver;
 
     public static void main(String[] args) throws InterruptedException {
-        hw.args = args;
         WebDriverManager.chromedriver().setup();
-        /* driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); */
+        driver = new ChromeDriver();
+        //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         loginToCrm();
 
         driver.get("https://crm.geekbrains.space/expense-request/");
@@ -48,7 +47,7 @@ public class hw {
 
     public static void loginToCrm() {
         driver.get("https://crm.geekbrains.space/user/login");
-        driver.findElement(By.id("prependedInput")).sendKeys("Applanatest");
+        driver.findElement(By.id("prependedInput")).sendKeys("Applanatest1");
         driver.findElement(By.id("prependedInput2")).sendKeys("Student2020!");
         driver.findElement(By.xpath("//button")).click();
     }

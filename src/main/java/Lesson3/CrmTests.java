@@ -9,10 +9,11 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CrmTests {
-    public static WebDriver driver = new ChromeDriver();
+    public static WebDriver driver;
 
     public static void main(String[] args) throws InterruptedException {
         WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
         /* driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); */
         loginToCrm();
 
